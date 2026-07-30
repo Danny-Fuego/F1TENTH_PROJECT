@@ -1,0 +1,16 @@
+pure_pursuit_node:
+  ros__parameters:
+    waypoints_path: "/sim_ws/src/f1tenth_project/pure_pursuit/racelines/Spielberg_raceline.csv"
+    odom_topic: "/ego_racecar/odom"
+    drive_topic: "/pp_drive"
+    min_lookahead: 0.5
+    max_lookahead: 2.5
+    lookahead_ratio: 8.0
+    K_p: 0.4
+    steering_limit: 25.0
+    velocity_percentage: 0.7
+
+waypoint_visualizer_node:
+  ros__parameters:
+    waypoints_path: "/sim_ws/src/f1tenth_project/pure_pursuit/racelines/Spielberg_raceline.csv"
+    rviz_waypoints_topic: "/waypoints"
