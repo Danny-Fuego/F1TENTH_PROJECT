@@ -237,3 +237,7 @@ At 100% speed (8 m/s) the PD Pure Pursuit becomes unstable — consistent with k
 - [F1Tenth Racetracks](https://github.com/f1tenth/f1tenth_racetracks)
 - [Steven Gong's F1Tenth Stack](https://github.com/CL2-UWaterloo/f1tenth_ws)
 - [F1Tenth 2020 Course — Penn Engineering](https://www.youtube.com/playlist?list=PL7rtKJAz_mPdFDJtufKmqfWRNu55s_LMc)
+
+## CAD Files
+F1Tenth assembly CAD files (SolidWorks):
+[View on Google Drive](https://drive.google.com/drive/folders/1RC6OWucZGz4a2GUob5C4aIZ_LDUboesL?usp=sharing)
