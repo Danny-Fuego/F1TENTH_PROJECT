@@ -2,7 +2,28 @@
 
 Autonomous racing on the F1Tenth platform. This is undergraduate research at MTSU (Middle Tennessee State University). The stack runs in the F1Tenth simulator and on a real 1/10-scale car with an NVIDIA Jetson Orin, a Hokuyo LiDAR and a VESC.
 
-The car follows a precomputed racing line with **Pure Pursuit**. It hands control to **Follow the Gap** only when something new is in its path, and a separate **AEB** node brakes if a collision is close.
+The car follows a precomputed racing line with **Pure Pursuit**. The goal is for it to hand control to **Follow the Gap** only when something new is in its path, with a separate **AEB** node braking if a collision is close. See [Status](#status) for where each part stands.
+
+Demo: [real-car run on LinkedIn](https://www.linkedin.com/posts/danielbaadom_f1tenth-autonomousvehicles-robotics-ugcPost-7529326200922517505-88RE/)
+
+---
+
+## Status
+
+| Part | State | Results so far |
+|---|---|---|
+| Pure Pursuit | Working on the real car and in the sim | Real car, 2nd-floor raceline at 50% speed: about 10 cm average tracking error, 0.27 m worst |
+| AEB | Working | Sim, PP at 70% speed: 18 laps with no false brakes |
+| Follow the Gap | Working in the sim | Laps the Levine and 2nd-floor maps; gets through the 7-box obstacle map. Stops at very tight gaps (0.65 m) instead of squeezing through |
+| Switcher (PP ↔ FTG) | **Work in progress** | Still hands control to FTG at random on a clean track, from a few times per 10 laps to more often |
+
+**What the switcher problem turned out to be.** The switcher compares each LiDAR point with the clean map to tell known walls from new objects. Small errors in the car's estimated position, which grow with speed and lag, put real wall points up to about 0.5 m off the map's walls, so they get flagged as "new objects" and FTG takes over. A stricter map check helped but didn't remove it. A second, rarer trigger comes from the wall check predicting the path from the current steering angle on corner entry.
+
+**Next steps**
+- Line each scan up with the map before judging points (the same idea a particle filter uses), keeping the correction small and fast enough for the Orin
+- Rebuild the wall check on the AEB's two-prediction rule, so FTG acts a little before AEB brakes
+- A smooth handback from FTG to Pure Pursuit; right now PP oscillates when it rejoins the line at an angle
+- Later: a local planner so the car can squeeze through tight gaps and rejoin the racing line cleanly
 
 ---
 
@@ -134,3 +155,7 @@ This writes `NAME_centerline.csv`, a cleaned track map for the sim, `NAME_raceli
 ## Author
 
 Daniel Baadom: Mechatronics Engineering, MTSU
+
+## License
+
+MIT. See [LICENSE](LICENSE).
