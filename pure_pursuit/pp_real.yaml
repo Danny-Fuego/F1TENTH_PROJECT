@@ -1,0 +1,16 @@
+# Pure Pursuit settings for the REAL CAR (2nd floor)
+# Run:  python3 ~/F1TENTH_PROJECT/pure_pursuit/pure_pursuit_node.py --ros-args --params-file ~/F1TENTH_PROJECT/pure_pursuit/pp_real.yaml
+pure_pursuit_node:
+  ros__parameters:
+    waypoints_path: /home/john/F1TENTH_PROJECT/pure_pursuit/racelines/second_floor_raceline_slow.csv
+    odom_topic: /pf/pose/odom        # particle filter pose
+    drive_topic: /drive              # ackermann_mux navigation input
+    base_frame: base_link            # real car frame (sim is ego_racecar/base_link)
+    map_frame: map
+    wheelbase: 0.3175
+    # slow constants (from the doc)
+    K_p: 0.35
+    min_lookahead: 1.0
+    max_lookahead: 2.5
+    lookahead_ratio: 3.0
+    velocity_percentage: 0.5

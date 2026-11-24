@@ -1,0 +1,9 @@
+aeb_node:
+  ros__parameters:
+    odom_topic: /odom
+    drive_topic: /safety
+    cmd_topic: /ackermann_cmd
+    wheelbase: 0.3175
+    ttc_threshold: 0.5
+    corridor_half_width: 0.2
+    reset_button: 1

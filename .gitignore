@@ -1,0 +1,19 @@
+# colcon build output
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# local scratch versions (keep these on the car, not in the repo)
+*_v[0-9]*.py
+*_v[0-9]*.yaml
+*_before_*.py
+*_before_*.yaml
+
+# logs / bags
+*.log
+*.db3
+*.mcap

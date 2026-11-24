@@ -1,0 +1,20 @@
+# Switcher v4 — SIM parameters (last working: 0.5 m map check, wall watcher 0.4)
+switcher_node:
+  ros__parameters:
+    base_frame: ego_racecar/base_link   # real car: base_link
+    map_frame: map
+    use_map_filter: true
+    map_yaml: /home/john/f1tenth_gym_ros/maps/second_floor_track.yaml
+    map_tolerance: 0.5          # m: points this close to a map wall count as wall
+    laser_x_override: -1.0      # m: -1 = read the LiDAR offset from TF
+    ttc_new_object: 1.2         # s: new object this close in time -> FTG
+    ttc_wall: 0.4               # s: known wall this close in time -> FTG
+    min_speed_for_ttc: 0.5      # m/s
+    wheelbase: 0.33             # m (sim 0.33, real car 0.3175)
+    car_half_width: 0.15        # m
+    path_margin: 0.10           # m
+    min_points: 10              # triggering LiDAR points needed
+    enter_scans: 5              # triggered scans in a row before FTG
+    clear_scans: 40             # clear scans in a row before back to PP
+    stale_timeout: 0.3          # s
+    ftg_speed_cap: 2.0          # m/s

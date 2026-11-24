@@ -1,0 +1,4 @@
+# Pure Pursuit sends to the switcher instead of straight to /drive
+pure_pursuit_node:
+  ros__parameters:
+    drive_topic: /pp_drive

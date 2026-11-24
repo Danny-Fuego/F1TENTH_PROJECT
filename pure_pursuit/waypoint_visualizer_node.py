@@ -8,7 +8,7 @@ class WaypointVisualizer(Node):
         super().__init__('waypoint_visualizer_node')
         
         # Parameters
-        self.declare_parameter('waypoints_path', '/sim_ws/src/f1tenth_project/pure_pursuit/racelines/Spielberg_raceline.csv')
+        self.declare_parameter('waypoints_path', '/home/john/F1TENTH_PROJECT/pure_pursuit/racelines/second_floor_raceline.csv')
         self.declare_parameter('rviz_waypoints_topic', '/waypoints')
         
         # Get parameters

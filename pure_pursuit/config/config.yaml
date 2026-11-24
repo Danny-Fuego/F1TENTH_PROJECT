@@ -1,6 +1,6 @@
 pure_pursuit_node:
   ros__parameters:
-    waypoints_path: "/sim_ws/src/f1tenth_project/pure_pursuit/racelines/Spielberg_raceline.csv"
+    waypoints_path: "/home/john/F1TENTH_PROJECT/pure_pursuit/racelines/Spielberg_raceline.csv"
     odom_topic: "/ego_racecar/odom"
     drive_topic: "/pp_drive"
     min_lookahead: 0.5
@@ -12,5 +12,5 @@ pure_pursuit_node:
 
 waypoint_visualizer_node:
   ros__parameters:
-    waypoints_path: "/sim_ws/src/f1tenth_project/pure_pursuit/racelines/Spielberg_raceline.csv"
+    waypoints_path: "/home/john/F1TENTH_PROJECT/pure_pursuit/racelines/Spielberg_raceline.csv"
     rviz_waypoints_topic: "/waypoints"

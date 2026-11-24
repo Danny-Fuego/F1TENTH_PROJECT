@@ -1,0 +1,41 @@
+# Follow the Gap — SIM parameters (v7: disparity extender + tight-gap squeeze mode + safety)
+ftg_node:
+  ros__parameters:
+    scan_topic: /scan
+    drive_topic: /drive
+    target_mode: disparity     # 'disparity' (v4) or 'middle' (v3 bubble + gap)
+    max_range: 4.0             # m
+    fov_deg: 70.0              # only aim within +-70 deg
+    max_steer: 0.42            # rad
+    # disparity extender
+    disparity_threshold: 0.3   # m: neighbour beams jumping more than this = an edge
+    car_half_width: 0.15       # m
+    disparity_margin: 0.20     # m extra clearance padded onto every edge (normal driving)
+    disparity_margin_min: 0.05 # m clearance used in tight-gap (squeeze) mode
+    tight_speed: 0.8           # m/s crawl speed while squeezing
+    tight_trigger_depth: 2.0   # m: consider squeezing when the normal view is this blocked...
+    tight_depth_gain: 1.0      # m: ...and the tight gap leads at least this much deeper
+    tight_angle_gain_deg: 20.0 # deg: or when the tight gap is this much more straight-ahead than the detour
+    tight_commit_scans: 80     # scans (~2 s) to stay committed once squeezing
+    side_clearance: 0.0        # m, 0 = off
+    stop_distance: 0.45        # m: stop if something is this close in the car's path
+    slow_distance: 1.2         # m: start slowing down below this
+    min_speed: 0.3             # m/s crawl speed near obstacles (the stop checks still stop it)
+    resume_extra: 0.25         # m: once stopped, the path must be this much clearer before moving again
+    ring_side: 0.05            # m: stop if anything is this close to the car's sides
+    ring_front: 0.30           # m: car body ahead of the LiDAR
+    ring_rear: 0.30            # m: car body behind the LiDAR
+    # steering + speed
+    steer_mode: angle
+    steer_gain: 0.6
+    steer_alpha: 0.3
+    speed_straight: 2.0
+    speed_mid: 1.2
+    speed_turn: 0.7
+    steer_mid: 0.15
+    steer_turn: 0.30
+    wheelbase: 0.3175
+    # only used in 'middle' mode
+    smooth_window: 5
+    bubble_radius: 0.6
+    gap_threshold: 2.5
