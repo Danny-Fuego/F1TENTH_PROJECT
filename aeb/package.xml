@@ -3,9 +3,9 @@
 <package format="3">
   <name>aeb</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Automatic emergency braking (time to collision) for F1Tenth</description>
   <maintainer email="danielbaadom7@gmail.com">Daniel Baadom</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
