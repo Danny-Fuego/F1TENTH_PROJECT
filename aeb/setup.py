@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='john',
-    maintainer_email='john@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Daniel Baadom',
+    maintainer_email='danielbaadom7@gmail.com',
+    description='Automatic emergency braking (time to collision) for F1Tenth',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
